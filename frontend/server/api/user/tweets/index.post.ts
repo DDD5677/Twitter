@@ -26,7 +26,6 @@ export default defineEventHandler(async (event)=>{
 		text:fields.text[0]as string,
 		authorId:userId
 	}
-	console.log(fields)
 	const replyTo:string = fields.replyTo?fields.replyTo[0]:null;
 	if(replyTo&&replyTo!=='null'&&replyTo!=='undefined'){
 		tweetData.replyToId=replyTo
