@@ -2,7 +2,7 @@ import { getUserByUsername } from "~/server/db/users"
 import bcrypt from 'bcrypt'
 import { generateTokens, sendRefreshToken } from "~/server/utils/jwt"
 import { userTransformer } from "~/server/transformers/user"
-import { User } from "~/server/types"
+import { User } from "~/types"
 import { createRefreshToken } from "~/server/db/refreshTokens"
 
 export default defineEventHandler(async(event)=>{
@@ -45,7 +45,6 @@ export default defineEventHandler(async(event)=>{
 		token:refreshToken,
 		userId:user.id?user.id:''
 	})
-	console.log(event)
 	//Add http only cookie
 	sendRefreshToken(event,refreshToken)
 

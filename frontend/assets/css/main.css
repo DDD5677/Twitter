@@ -6,6 +6,6 @@
 		transition: all 0.35s ease-in-out;
 	}
 	.twitterBorderColor{
-		@apply border-gray-200 dark:border-gray-700;
+		@apply border-gray-100 dark:border-gray-700;
 	}
 }

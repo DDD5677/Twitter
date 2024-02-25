@@ -8,8 +8,15 @@ export default defineNuxtConfig({
 	  autoprefixer: {},
 	},
  },
+ build:{
+	transpile:['@heroicons/vue']
+ },
  runtimeConfig:{
 	accessTokenSecret:process.env.ACCESS_TOKEN_SECRET,
-	refreshTokenSecret:process.env.REFRESH_TOKEN_SECRET
+	refreshTokenSecret:process.env.REFRESH_TOKEN_SECRET,
+	//Cloudinary
+	cloudinaryCloudName:process.env.CLOUDINARY_CLOUD_NAME,
+	cloudinaryApiKey:process.env.CLOUDINARY_API_KEY,
+	cloudinaryApiSecret:process.env.CLOUDINARY_API_SECRET,
  }
 })

@@ -1,4 +1,4 @@
-import { User } from "../types"
+import { User } from "../../types"
 import {prisma} from "./index"
 import bcrypt from 'bcrypt'
 export const createUser = (userData:User)=>{
@@ -16,6 +16,14 @@ export const getUserByUsername = (username:string)=>{
 	return prisma.user.findUnique({
 		where:{
 			username
+		}
+	})
+}
+
+export const getUserById = (userId:string)=>{
+	return prisma.user.findUnique({
+		where:{
+			id:userId
 		}
 	})
 }
